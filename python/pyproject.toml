@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "neetcode-150"
+version = "1.0.0"
+description = "NeetCode 150 練習專案 - Python"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["../problems"]
+python_files = ["solution.py"]
+python_classes = ["Solution"]

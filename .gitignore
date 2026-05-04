@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Dart
+.dart_tool/
+.packages
+pubspec.lock
+
+# Swift / Xcode
+.build/
+*.xcodeproj/
+*.xcworkspace/
+DerivedData/
+*.resolved
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VS Code
+.vscode/
