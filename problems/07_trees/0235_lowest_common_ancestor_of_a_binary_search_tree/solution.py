@@ -5,15 +5,16 @@ URL: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tre
 
 解法：利用 BST 排序性沿樹走，O(h)/O(1)。
 """
-from __future__ import annotations
-from typing import Optional, List
-from collections import deque
 
+from __future__ import annotations
+
+from typing import Optional, List
+
+from collections import deque
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val; self.left = left; self.right = right
-
 
 def from_level(arr: List[Optional[int]]) -> Optional[TreeNode]:
     if not arr: return None
@@ -26,7 +27,6 @@ def from_level(arr: List[Optional[int]]) -> Optional[TreeNode]:
         i += 1
     return root
 
-
 def find(root, val):
     cur = root
     while cur:
@@ -34,26 +34,16 @@ def find(root, val):
         cur = cur.left if val < cur.val else cur.right
     return None
 
-
 class Solution:
     def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
-        node = root
-        while node:
-            if p.val < node.val and q.val < node.val:
-                node = node.left
-            elif p.val > node.val and q.val > node.val:
-                node = node.right
-            else:
-                return node
+        pass
 
 
 if __name__ == "__main__":
-    sol = Solution()
-    r = from_level([6, 2, 8, 0, 4, 7, 9, None, None, 3, 5])
-    assert sol.lowestCommonAncestor(r, find(r, 2), find(r, 8)).val == 6
-    assert sol.lowestCommonAncestor(r, find(r, 2), find(r, 4)).val == 2
-    assert sol.lowestCommonAncestor(r, find(r, 3), find(r, 5)).val == 4
-    assert sol.lowestCommonAncestor(r, find(r, 0), find(r, 9)).val == 6
-    r2 = from_level([2, 1])
-    assert sol.lowestCommonAncestor(r2, find(r2, 2), find(r2, 1)).val == 2
+    solution = Solution()
+
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
+
     print("All tests passed!")

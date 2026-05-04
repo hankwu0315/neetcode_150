@@ -23,15 +23,8 @@ func fromLevel(_ a: [Int?]) -> TreeNode? {
 
 class Solution {
     func isBalanced(_ root: TreeNode?) -> Bool {
-        func depth(_ n: TreeNode?) -> Int {
-            guard let n = n else { return 0 }
-            let L = depth(n.left)
-            if L == -1 { return -1 }
-            let R = depth(n.right)
-            if R == -1 || abs(L - R) > 1 { return -1 }
-            return 1 + max(L, R)
-        }
-        return depth(root) != -1
+        // TODO: implement
+        return false
     }
 }
 
@@ -39,10 +32,10 @@ func checkBool(_ a: Bool, _ e: Bool, _ msg: String) {
     if a != e { fatalError("FAIL \(msg)") }
 }
 
-let sol = Solution()
-checkBool(sol.isBalanced(fromLevel([3, 9, 20, nil, nil, 15, 7])), true, "ex1")
-checkBool(sol.isBalanced(fromLevel([1, 2, 2, 3, 3, nil, nil, 4, 4])), false, "ex2")
-checkBool(sol.isBalanced(fromLevel([])), true, "empty")
-checkBool(sol.isBalanced(fromLevel([1])), true, "one")
-checkBool(sol.isBalanced(fromLevel([1, 2, nil, 3, nil, 4])), false, "skew")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
+
 print("All tests passed!")

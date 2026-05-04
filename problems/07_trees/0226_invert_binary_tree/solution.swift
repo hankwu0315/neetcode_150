@@ -40,11 +40,8 @@ func toLevel(_ root: TreeNode?) -> [Int?] {
 
 class Solution {
     func invertTree(_ root: TreeNode?) -> TreeNode? {
-        guard let root = root else { return nil }
-        let l = invertTree(root.right)
-        let r = invertTree(root.left)
-        root.left = l; root.right = r
-        return root
+        // TODO: implement
+        return nil
     }
 }
 
@@ -53,9 +50,10 @@ func checkLevel(_ a: [Int?], _ e: [Int?], _ msg: String) {
     for i in 0..<a.count { if a[i] != e[i] { fatalError("FAIL \(msg): \(a) vs \(e)") } }
 }
 
-let sol = Solution()
-checkLevel(toLevel(sol.invertTree(fromLevel([4, 2, 7, 1, 3, 6, 9]))), [4, 7, 2, 9, 6, 3, 1], "ex1")
-checkLevel(toLevel(sol.invertTree(fromLevel([2, 1, 3]))), [2, 3, 1], "ex2")
-checkLevel(toLevel(sol.invertTree(fromLevel([]))), [], "empty")
-checkLevel(toLevel(sol.invertTree(fromLevel([1]))), [1], "one")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
+
 print("All tests passed!")

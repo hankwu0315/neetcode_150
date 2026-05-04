@@ -14,47 +14,20 @@ URL: https://leetcode.com/problems/search-a-2d-matrix/
 複雜度：O(log(m*n)) / O(1)。
 """
 
-
 class Solution:
     # 最佳解：一維二分
     def searchMatrix(self, matrix: list[list[int]], target: int) -> bool:
-        if not matrix or not matrix[0]:
-            return False
-        m, n = len(matrix), len(matrix[0])
-        l, r = 0, m * n - 1
-        while l <= r:
-            mid = l + (r - l) // 2
-            v = matrix[mid // n][mid % n]
-            if v == target:
-                return True
-            if v < target:
-                l = mid + 1
-            else:
-                r = mid - 1
-        return False
+        pass
 
-    # 暴力對照
     def searchMatrix_brute(self, matrix: list[list[int]], target: int) -> bool:
-        for row in matrix:
-            for v in row:
-                if v == target:
-                    return True
-        return False
+        pass
 
 
 if __name__ == "__main__":
-    sol = Solution()
-    M = [[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 60]]
-    for fn in (sol.searchMatrix, sol.searchMatrix_brute):
-        assert fn(M, 3) is True
-        assert fn(M, 13) is False
-        assert fn(M, 1) is True
-        assert fn(M, 60) is True
-        assert fn(M, 0) is False
-        assert fn(M, 100) is False
-        # 單元素
-        assert fn([[5]], 5) is True
-        assert fn([[5]], 3) is False
-        # 單列
-        assert fn([[1, 2, 3]], 2) is True
+    solution = Solution()
+
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
+
     print("All tests passed!")

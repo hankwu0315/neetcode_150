@@ -5,15 +5,16 @@ URL: https://leetcode.com/problems/balanced-binary-tree/
 
 解法：DFS 後序回傳深度或 -1（提前剪枝），O(n)/O(h)。
 """
-from __future__ import annotations
-from typing import Optional, List
-from collections import deque
 
+from __future__ import annotations
+
+from typing import Optional, List
+
+from collections import deque
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val; self.left = left; self.right = right
-
 
 def from_level(arr: List[Optional[int]]) -> Optional[TreeNode]:
     if not arr: return None
@@ -26,24 +27,16 @@ def from_level(arr: List[Optional[int]]) -> Optional[TreeNode]:
         i += 1
     return root
 
-
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        def depth(n):
-            if n is None: return 0
-            L = depth(n.left)
-            if L == -1: return -1
-            R = depth(n.right)
-            if R == -1 or abs(L - R) > 1: return -1
-            return 1 + max(L, R)
-        return depth(root) != -1
+        pass
 
 
 if __name__ == "__main__":
-    sol = Solution()
-    assert sol.isBalanced(from_level([3, 9, 20, None, None, 15, 7])) is True
-    assert sol.isBalanced(from_level([1, 2, 2, 3, 3, None, None, 4, 4])) is False
-    assert sol.isBalanced(from_level([])) is True
-    assert sol.isBalanced(from_level([1])) is True
-    assert sol.isBalanced(from_level([1, 2, None, 3, None, 4])) is False
+    solution = Solution()
+
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
+
     print("All tests passed!")

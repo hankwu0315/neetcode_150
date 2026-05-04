@@ -7,44 +7,18 @@
 // 【複雜度】時間：O(n)  空間：O(1)
 
 List<int> twoSum(List<int> numbers, int target) {
-  int l = 0, r = numbers.length - 1;
-  while (l < r) {
-    final total = numbers[l] + numbers[r];
-    if (total == target) return [l + 1, r + 1];
-    if (total < target) {
-      l++;
-    } else {
-      r--;
-    }
-  }
+  // TODO: implement
   return [];
 }
 
 List<int> twoSumBrute(List<int> numbers, int target) {
-  final seen = <int, int>{};
-  for (int i = 0; i < numbers.length; i++) {
-    final need = target - numbers[i];
-    if (seen.containsKey(need)) return [seen[need]! + 1, i + 1];
-    seen[numbers[i]] = i;
-  }
+  // TODO: implement
   return [];
 }
 
-void _expect(List<int> actual, List<int> expected, String name) {
-  if (actual.toString() == expected.toString()) {
-    print('✓ $name');
-  } else {
-    print('✗ $name: expected $expected but got $actual');
-  }
-}
 
 void main() {
-  _expect(twoSum([2, 7, 11, 15], 9), [1, 2], 'Test 1');
-  _expect(twoSum([2, 3, 4], 6), [1, 3], 'Test 2');
-  _expect(twoSum([-1, 0], -1), [1, 2], 'Test 3: negatives');
-  _expect(twoSum([1, 2, 3, 4, 5], 9), [4, 5], 'Test 4');
-  _expect(twoSum([0, 0, 3, 4], 0), [1, 2], 'Test 5: zeros');
-  _expect(twoSumBrute([2, 7, 11, 15], 9), [1, 2], 'Brute Test');
-
+  // Test 1
+  // final result = solve(...);
   print('All tests passed!');
 }

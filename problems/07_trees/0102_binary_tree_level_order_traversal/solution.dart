@@ -21,36 +21,13 @@ TreeNode? fromLevel(List<int?> a) {
 }
 
 List<List<int>> levelOrder(TreeNode? root) {
-  if (root == null) return [];
-  final out = <List<int>>[];
-  var q = <TreeNode>[root];
-  while (q.isNotEmpty) {
-    final layer = <int>[];
-    final nx = <TreeNode>[];
-    for (final n in q) {
-      layer.add(n.val);
-      if (n.left != null) nx.add(n.left!);
-      if (n.right != null) nx.add(n.right!);
-    }
-    out.add(layer);
-    q = nx;
-  }
-  return out;
+  // TODO: implement
+  return [];
 }
 
-bool _eq(List<List<int>> a, List<List<int>> b) {
-  if (a.length != b.length) return false;
-  for (var i = 0; i < a.length; i++) {
-    if (a[i].length != b[i].length) return false;
-    for (var j = 0; j < a[i].length; j++) if (a[i][j] != b[i][j]) return false;
-  }
-  return true;
-}
 
 void main() {
-  if (!_eq(levelOrder(fromLevel([3, 9, 20, null, null, 15, 7])), [[3], [9, 20], [15, 7]])) throw 'ex1';
-  if (!_eq(levelOrder(fromLevel([1])), [[1]])) throw 'one';
-  if (!_eq(levelOrder(fromLevel([])), [])) throw 'empty';
-  if (!_eq(levelOrder(fromLevel([1, 2, 3, 4, 5, 6, 7])), [[1], [2, 3], [4, 5, 6, 7]])) throw 'full';
+  // Test 1
+  // final result = solve(...);
   print('All tests passed!');
 }

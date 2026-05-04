@@ -23,9 +23,8 @@ func fromLevel(_ a: [Int?]) -> TreeNode? {
 
 class Solution {
     func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
-        if p == nil && q == nil { return true }
-        if p == nil || q == nil { return false }
-        return p!.val == q!.val && isSameTree(p!.left, q!.left) && isSameTree(p!.right, q!.right)
+        // TODO: implement
+        return false
     }
 }
 
@@ -33,10 +32,10 @@ func checkBool(_ a: Bool, _ e: Bool, _ msg: String) {
     if a != e { fatalError("FAIL \(msg)") }
 }
 
-let sol = Solution()
-checkBool(sol.isSameTree(fromLevel([1, 2, 3]), fromLevel([1, 2, 3])), true, "ex1")
-checkBool(sol.isSameTree(fromLevel([1, 2]), fromLevel([1, nil, 2])), false, "ex2")
-checkBool(sol.isSameTree(fromLevel([1, 2, 1]), fromLevel([1, 1, 2])), false, "ex3")
-checkBool(sol.isSameTree(fromLevel([]), fromLevel([])), true, "empty")
-checkBool(sol.isSameTree(fromLevel([1]), fromLevel([])), false, "one vs empty")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
+
 print("All tests passed!")

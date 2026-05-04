@@ -5,16 +5,18 @@ URL: https://leetcode.com/problems/binary-tree-maximum-path-sum/
 
 解法：DFS 後序，回傳向上單邊最大貢獻並更新答案，O(n)/O(h)。
 """
-from __future__ import annotations
-from typing import Optional, List
-from collections import deque
-import math
 
+from __future__ import annotations
+
+from typing import Optional, List
+
+from collections import deque
+
+import math
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val; self.left = left; self.right = right
-
 
 def from_level(arr: List[Optional[int]]) -> Optional[TreeNode]:
     if not arr: return None
@@ -27,30 +29,16 @@ def from_level(arr: List[Optional[int]]) -> Optional[TreeNode]:
         i += 1
     return root
 
-
 class Solution:
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
-        ans = -math.inf
-
-        def gain(n):
-            nonlocal ans
-            if n is None: return 0
-            L = max(0, gain(n.left))
-            R = max(0, gain(n.right))
-            cur = n.val + L + R
-            if cur > ans: ans = cur
-            return n.val + max(L, R)
-
-        gain(root)
-        return ans
+        pass
 
 
 if __name__ == "__main__":
-    sol = Solution()
-    assert sol.maxPathSum(from_level([1, 2, 3])) == 6
-    assert sol.maxPathSum(from_level([-10, 9, 20, None, None, 15, 7])) == 42
-    assert sol.maxPathSum(from_level([-3])) == -3
-    assert sol.maxPathSum(from_level([2, -1])) == 2
-    assert sol.maxPathSum(from_level([-2, -1])) == -1
-    assert sol.maxPathSum(from_level([1, -2, -3, 1, 3, -2, None, -1])) == 3
+    solution = Solution()
+
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
+
     print("All tests passed!")

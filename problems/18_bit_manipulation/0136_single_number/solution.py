@@ -1,21 +1,19 @@
 """
 Problem: 0136. Single Number
 """
-from typing import List
 
+from typing import List
 
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        x = 0
-        for v in nums:
-            x ^= v
-        return x
+        pass
 
 
 if __name__ == "__main__":
-    sol = Solution()
-    assert sol.singleNumber([2, 2, 1]) == 1
-    assert sol.singleNumber([4, 1, 2, 1, 2]) == 4
-    assert sol.singleNumber([1]) == 1
-    assert sol.singleNumber([7, 3, 5, 4, 5, 3, 4]) == 7
+    solution = Solution()
+
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
+
     print("All tests passed!")

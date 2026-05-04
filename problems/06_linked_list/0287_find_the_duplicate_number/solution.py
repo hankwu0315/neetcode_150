@@ -11,36 +11,19 @@ URL: https://leetcode.com/problems/find-the-duplicate-number/
 - i -> nums[i] 構成函式圖，n+1 個值映到 [1,n] 必有環，入口即重複值。
 """
 
-
 class Solution:
     def findDuplicate(self, nums: list[int]) -> int:
-        slow = fast = 0
-        while True:
-            slow = nums[slow]
-            fast = nums[nums[fast]]
-            if slow == fast:
-                break
-        slow = 0
-        while slow != fast:
-            slow = nums[slow]
-            fast = nums[fast]
-        return slow
+        pass
 
     def findDuplicate_brute(self, nums: list[int]) -> int:
-        seen = set()
-        for v in nums:
-            if v in seen:
-                return v
-            seen.add(v)
-        return -1
+        pass
 
 
 if __name__ == "__main__":
-    sol = Solution()
-    for fn in (sol.findDuplicate, sol.findDuplicate_brute):
-        assert fn([1, 3, 4, 2, 2]) == 2
-        assert fn([3, 1, 3, 4, 2]) == 3
-        assert fn([1, 1]) == 1
-        assert fn([2, 2, 2, 2, 2]) == 2
-        assert fn([1, 4, 4, 2, 4]) == 4
+    solution = Solution()
+
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
+
     print("All tests passed!")

@@ -10,27 +10,13 @@ import Foundation
 
 class Codec {
     func encode(_ strs: [String]) -> String {
-        var result = ""
-        for s in strs {
-            result += "\(s.count)#\(s)"
-        }
-        return result
+        // TODO: implement
+        return ""
     }
 
     func decode(_ s: String) -> [String] {
-        var result = [String]()
-        let chars = Array(s)
-        var i = 0
-        while i < chars.count {
-            var j = i
-            while chars[j] != "#" { j += 1 }
-            let length = Int(String(chars[i..<j]))!
-            let start = j + 1
-            let end = start + length
-            result.append(String(chars[start..<end]))
-            i = end
-        }
-        return result
+        // TODO: implement
+        return []
     }
 }
 
@@ -39,19 +25,10 @@ func checkArr(_ actual: [String], _ expected: [String], _ name: String) {
     else { print("✗ \(name): expected \(expected) but got \(actual)") }
 }
 
-let codec = Codec()
-let cases: [[String]] = [
-    ["lint", "code", "love", "you"],
-    ["we", "say", ":", "yes"],
-    [""],
-    [],
-    ["", ""],
-    ["#", "1#", "abc#def", "##"],
-    [String(repeating: "a", count: 100), String(repeating: "b", count: 50)],
-]
-for (i, c) in cases.enumerated() {
-    let decoded = codec.decode(codec.encode(c))
-    checkArr(decoded, c, "Test \(i + 1)")
-}
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
 
 print("All tests passed!")

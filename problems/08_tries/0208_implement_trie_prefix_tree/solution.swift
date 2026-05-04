@@ -10,42 +10,34 @@ final class TrieNode {
 
 class Trie {
     private let root = TrieNode()
-    init() {}
+    init() {
+        // TODO: implement
+    }
     func insert(_ word: String) {
-        var n = root
-        for c in word {
-            if let nxt = n.ch[c] { n = nxt }
-            else { let x = TrieNode(); n.ch[c] = x; n = x }
-        }
-        n.end = true
+        // TODO: implement
     }
     private func walk(_ s: String) -> TrieNode? {
-        var n = root
-        for c in s {
-            guard let nxt = n.ch[c] else { return nil }
-            n = nxt
-        }
-        return n
+        // TODO: implement
+        return nil
     }
     func search(_ w: String) -> Bool {
-        if let n = walk(w) { return n.end }
+        // TODO: implement
         return false
     }
-    func startsWith(_ p: String) -> Bool { walk(p) != nil }
+    func startsWith(_ p: String) -> Bool {
+        // TODO: implement
+        return false
+    }
 }
 
 func checkBool(_ a: Bool, _ e: Bool, _ msg: String) {
     if a != e { fatalError("FAIL \(msg)") }
 }
 
-let t = Trie()
-t.insert("apple")
-checkBool(t.search("apple"), true, "apple in")
-checkBool(t.search("app"), false, "app not in")
-checkBool(t.startsWith("app"), true, "app prefix")
-t.insert("app")
-checkBool(t.search("app"), true, "app now in")
-checkBool(t.startsWith("appl"), true, "appl prefix")
-checkBool(t.search("appl"), false, "appl not word")
-checkBool(t.startsWith("b"), false, "b not prefix")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
+
 print("All tests passed!")

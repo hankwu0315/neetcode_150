@@ -13,46 +13,19 @@ URL: https://leetcode.com/problems/search-in-rotated-sorted-array/
 複雜度：O(log n) / O(1)。
 """
 
-
 class Solution:
     def search(self, nums: list[int], target: int) -> int:
-        l, r = 0, len(nums) - 1
-        while l <= r:
-            mid = l + (r - l) // 2
-            if nums[mid] == target:
-                return mid
-            if nums[l] <= nums[mid]:  # 左半已排序
-                if nums[l] <= target < nums[mid]:
-                    r = mid - 1
-                else:
-                    l = mid + 1
-            else:  # 右半已排序
-                if nums[mid] < target <= nums[r]:
-                    l = mid + 1
-                else:
-                    r = mid - 1
-        return -1
+        pass
 
     def search_brute(self, nums: list[int], target: int) -> int:
-        for i, v in enumerate(nums):
-            if v == target:
-                return i
-        return -1
+        pass
 
 
 if __name__ == "__main__":
-    sol = Solution()
-    for fn in (sol.search, sol.search_brute):
-        assert fn([4, 5, 6, 7, 0, 1, 2], 0) == 4
-        assert fn([4, 5, 6, 7, 0, 1, 2], 3) == -1
-        assert fn([1], 0) == -1
-        assert fn([1], 1) == 0
-        # 未旋轉
-        assert fn([1, 2, 3, 4, 5], 3) == 2
-        # 命中端點
-        assert fn([4, 5, 6, 7, 0, 1, 2], 4) == 0
-        assert fn([4, 5, 6, 7, 0, 1, 2], 2) == 6
-        # 兩元素
-        assert fn([3, 1], 1) == 1
-        assert fn([3, 1], 3) == 0
+    solution = Solution()
+
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
+
     print("All tests passed!")

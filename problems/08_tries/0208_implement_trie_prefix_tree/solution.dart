@@ -9,43 +9,25 @@ class _Node {
 class Trie {
   final _Node root = _Node();
   void insert(String word) {
-    var n = root;
-    for (var i = 0; i < word.length; i++) {
-      final c = word[i];
-      n = n.ch.putIfAbsent(c, () => _Node());
-    }
-    n.end = true;
+    // TODO: implement
   }
   _Node? _walk(String s) {
-    var n = root;
-    for (var i = 0; i < s.length; i++) {
-      final next = n.ch[s[i]];
-      if (next == null) return null;
-      n = next;
-    }
-    return n;
+    // TODO: implement
+    return null;
   }
   bool search(String w) {
-    final n = _walk(w);
-    return n != null && n.end;
+    // TODO: implement
+    return false;
   }
-  bool startsWith(String p) => _walk(p) != null;
+  bool startsWith(String p) {
+    // TODO: implement
+    return false;
+  }
 }
 
-void _expect(bool a, bool e, String msg) {
-  if (a != e) throw StateError('FAIL $msg');
-}
 
 void main() {
-  final t = Trie();
-  t.insert('apple');
-  _expect(t.search('apple'), true, 'apple in');
-  _expect(t.search('app'), false, 'app not in');
-  _expect(t.startsWith('app'), true, 'app prefix');
-  t.insert('app');
-  _expect(t.search('app'), true, 'app now in');
-  _expect(t.startsWith('appl'), true, 'appl prefix');
-  _expect(t.search('appl'), false, 'appl not word');
-  _expect(t.startsWith('b'), false, 'b not prefix');
+  // Test 1
+  // final result = solve(...);
   print('All tests passed!');
 }

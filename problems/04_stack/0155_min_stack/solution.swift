@@ -11,40 +11,31 @@ class MinStack {
     private var minStack: [Int] = []
 
     func push(_ val: Int) {
-        stack.append(val)
-        if minStack.isEmpty || val <= minStack.last! {
-            minStack.append(val)
-        }
+        // TODO: implement
     }
 
     func pop() {
-        let v = stack.removeLast()
-        if v == minStack.last! { minStack.removeLast() }
+        // TODO: implement
     }
 
-    func top() -> Int { stack.last! }
-    func getMin() -> Int { minStack.last! }
+    func top() -> Int {
+        // TODO: implement
+        return 0
+    }
+    func getMin() -> Int {
+        // TODO: implement
+        return 0
+    }
 }
 
 func checkInt(_ a: Int, _ e: Int, _ msg: String) {
     if a != e { fatalError("FAIL \(msg): \(a) vs \(e)") }
 }
 
-let ms = MinStack()
-ms.push(-2); ms.push(0); ms.push(-3)
-checkInt(ms.getMin(), -3, "min1")
-ms.pop()
-checkInt(ms.top(), 0, "top")
-checkInt(ms.getMin(), -2, "min2")
+// MARK: - Tests
+// let s = Solution()
 
-let ms2 = MinStack()
-ms2.push(1); ms2.push(1); ms2.push(1)
-checkInt(ms2.getMin(), 1, "rep1")
-ms2.pop()
-checkInt(ms2.getMin(), 1, "rep2")
+// Test 1
+// let result = s.solve(...)
 
-let ms3 = MinStack()
-ms3.push(5)
-checkInt(ms3.top(), 5, "single top")
-checkInt(ms3.getMin(), 5, "single min")
 print("All tests passed!")

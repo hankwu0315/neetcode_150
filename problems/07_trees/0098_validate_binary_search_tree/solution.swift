@@ -23,12 +23,8 @@ func fromLevel(_ a: [Int?]) -> TreeNode? {
 
 class Solution {
     func isValidBST(_ root: TreeNode?) -> Bool {
-        func valid(_ n: TreeNode?, _ lo: Int, _ hi: Int) -> Bool {
-            guard let n = n else { return true }
-            if !(n.val > lo && n.val < hi) { return false }
-            return valid(n.left, lo, n.val) && valid(n.right, n.val, hi)
-        }
-        return valid(root, Int.min, Int.max)
+        // TODO: implement
+        return false
     }
 }
 
@@ -36,11 +32,10 @@ func checkBool(_ a: Bool, _ e: Bool, _ msg: String) {
     if a != e { fatalError("FAIL \(msg)") }
 }
 
-let sol = Solution()
-checkBool(sol.isValidBST(fromLevel([2, 1, 3])), true, "ex1")
-checkBool(sol.isValidBST(fromLevel([5, 1, 4, nil, nil, 3, 6])), false, "ex2")
-checkBool(sol.isValidBST(fromLevel([])), true, "empty")
-checkBool(sol.isValidBST(fromLevel([1])), true, "one")
-checkBool(sol.isValidBST(fromLevel([5, 4, 6, nil, nil, 3, 7])), false, "right has 3")
-checkBool(sol.isValidBST(fromLevel([10, 5, 15, nil, nil, 6, 20])), false, "ancestor")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
+
 print("All tests passed!")

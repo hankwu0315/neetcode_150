@@ -12,48 +12,32 @@ import Foundation
 class Solution {
     // 最佳解：HashSet
     func containsDuplicate(_ nums: [Int]) -> Bool {
-        var seen = Set<Int>()
-        for x in nums {
-            if seen.contains(x) { return true }
-            seen.insert(x)
-        }
+        // TODO: implement
         return false
     }
 
     // 暴力解：兩兩比較
     func containsDuplicate_brute(_ nums: [Int]) -> Bool {
-        for i in 0..<nums.count {
-            for j in (i + 1)..<nums.count {
-                if nums[i] == nums[j] { return true }
-            }
-        }
+        // TODO: implement
         return false
     }
 
     // 排序後比鄰
     func containsDuplicate_sort(_ nums: [Int]) -> Bool {
-        let arr = nums.sorted()
-        for i in 1..<arr.count {
-            if arr[i] == arr[i - 1] { return true }
-        }
+        // TODO: implement
         return false
     }
 }
 
-// MARK: - Tests
 func checkBool(_ actual: Bool, _ expected: Bool, _ name: String) {
     if actual == expected { print("✓ \(name)") }
     else { print("✗ \(name): expected \(expected) but got \(actual)") }
 }
 
-let s = Solution()
-checkBool(s.containsDuplicate([1, 2, 3, 1]), true, "Test 1: basic dup")
-checkBool(s.containsDuplicate([1, 2, 3, 4]), false, "Test 2: no dup")
-checkBool(s.containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]), true, "Test 3: many dups")
-checkBool(s.containsDuplicate([1]), false, "Test 4: single")
-checkBool(s.containsDuplicate([-1, -1]), true, "Test 5: negatives")
+// MARK: - Tests
+// let s = Solution()
 
-checkBool(s.containsDuplicate_brute([1, 2, 3, 1]), true, "Brute Test 1")
-checkBool(s.containsDuplicate_sort([1, 2, 3, 4]), false, "Sort Test 1")
+// Test 1
+// let result = s.solve(...)
 
 print("All tests passed!")

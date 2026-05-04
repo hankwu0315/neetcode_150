@@ -9,55 +9,31 @@ URL: https://leetcode.com/problems/encode-and-decode-strings/
     decode: 解析至 '#'，取 length 後切 length 個字元，跳過繼續。
 【複雜度】時間：O(N)  空間：O(N)
 """
-from typing import List
 
+from typing import List
 
 class Codec:
     def encode(self, strs: List[str]) -> str:
-        return "".join(f"{len(s)}#{s}" for s in strs)
+        pass
 
     def decode(self, s: str) -> List[str]:
-        result: List[str] = []
-        i = 0
-        while i < len(s):
-            j = s.index("#", i)
-            length = int(s[i:j])
-            result.append(s[j + 1 : j + 1 + length])
-            i = j + 1 + length
-        return result
+        pass
 
 
-# 暴力解（脆弱）：示範錯誤示範，僅供對比
 class CodecNaive:
     SEP = "\x00"
-
     def encode(self, strs: List[str]) -> str:
-        return self.SEP.join(strs)
+        pass
 
     def decode(self, s: str) -> List[str]:
-        return s.split(self.SEP) if s else []
+        pass
 
 
 if __name__ == "__main__":
     codec = Codec()
 
-    cases = [
-        ["lint", "code", "love", "you"],
-        ["we", "say", ":", "yes"],
-        [""],                               # 單個空字串
-        [],                                 # 空陣列
-        ["", ""],                           # 多個空字串
-        ["#", "1#", "abc#def", "##"],       # 字串內含 '#'
-        ["a" * 100, "b" * 50],              # 較長字串
-    ]
-    for i, c in enumerate(cases, 1):
-        encoded = codec.encode(c)
-        decoded = codec.decode(encoded)
-        assert decoded == c, f"Test {i} failed: {decoded} != {c}"
-
-    # 驗證脆弱解：當字串含 '\x00' 時失敗
-    naive = CodecNaive()
-    bad = ["a\x00b"]
-    assert naive.decode(naive.encode(bad)) != bad, "Naive should fail on null char"
+    # Test 1
+    # result = codec.solve(...)
+    # assert result == expected
 
     print("All tests passed!")

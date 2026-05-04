@@ -9,45 +9,20 @@ URL: https://leetcode.com/problems/minimum-window-substring/
     擴右、縮左，當 have == required 時更新答案。
 【複雜度】時間：O(|s| + |t|)  空間：O(|Σ|)
 """
-from collections import Counter, defaultdict
 
+from collections import Counter, defaultdict
 
 class Solution:
     # 最佳解
     def minWindow(self, s: str, t: str) -> str:
-        if not t or len(s) < len(t):
-            return ""
-        need = Counter(t)
-        required = len(need)
-        window: dict = defaultdict(int)
-        have = 0
-        l = 0
-        bestLen = float("inf")
-        bestL = bestR = 0
-        for r, c in enumerate(s):
-            window[c] += 1
-            if c in need and window[c] == need[c]:
-                have += 1
-            while have == required:
-                if r - l + 1 < bestLen:
-                    bestLen = r - l + 1
-                    bestL, bestR = l, r
-                window[s[l]] -= 1
-                if s[l] in need and window[s[l]] < need[s[l]]:
-                    have -= 1
-                l += 1
-        return "" if bestLen == float("inf") else s[bestL : bestR + 1]
+        pass
 
 
 if __name__ == "__main__":
-    s = Solution()
+    solution = Solution()
 
-    assert s.minWindow("ADOBECODEBANC", "ABC") == "BANC", "Test 1 failed"
-    assert s.minWindow("a", "a") == "a", "Test 2 failed"
-    assert s.minWindow("a", "aa") == "", "Test 3 failed (insufficient)"
-    assert s.minWindow("aa", "aa") == "aa", "Test 4 failed"
-    assert s.minWindow("ab", "b") == "b", "Test 5 failed"
-    assert s.minWindow("", "a") == "", "Test 6 failed (empty s)"
-    assert s.minWindow("aaflslflsldkalskaaa", "aaa") == "aaa", "Test 7 failed"
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
 
     print("All tests passed!")

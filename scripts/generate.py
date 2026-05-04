@@ -368,6 +368,92 @@ def make_swift(num: str, title: str, difficulty: str, url: str) -> str:
     ''')
 
 
+def make_python_optimal(num: str, title: str, difficulty: str, url: str) -> str:
+    return textwrap.dedent(f'''\
+        """
+        Problem: {num}. {title}
+        Difficulty: {difficulty}
+        URL: {url}
+
+        【解法演進】
+            TODO: 說明從暴力解到最佳解的演進
+
+        【最佳解核心思路】
+            TODO: 說明最佳解的關鍵想法
+
+        【複雜度】時間：O(?)  空間：O(?)
+        """
+        # from typing import List, Optional
+
+
+        class Solution:
+            def solve(self) -> None:
+                # TODO: 在此填入最佳解
+                pass
+
+
+        if __name__ == "__main__":
+            s = Solution()
+
+            # Test 1
+            # result = s.solve(...)
+            # assert result == expected, f"Test 1 failed: {{result}}"
+
+            print("All tests passed!")
+    ''')
+
+
+def make_dart_optimal(num: str, title: str, difficulty: str, url: str) -> str:
+    return textwrap.dedent(f'''\
+        // Problem: {num}. {title}
+        // Difficulty: {difficulty}
+        // URL: {url}
+        //
+        // 【解法演進】TODO: 說明從暴力解到最佳解的演進
+        // 【最佳解核心思路】TODO: 說明最佳解的關鍵想法
+        // 【複雜度】時間：O(?)  空間：O(?)
+
+        // TODO: 在此填入最佳解
+
+        void main() {{
+          // Test 1
+          // final result = solve(...);
+          // assert(result == expected, 'Test 1 failed: $result');
+
+          print('All tests passed!');
+        }}
+    ''')
+
+
+def make_swift_optimal(num: str, title: str, difficulty: str, url: str) -> str:
+    return textwrap.dedent(f'''\
+        // Problem: {num}. {title}
+        // Difficulty: {difficulty}
+        // URL: {url}
+        //
+        // 【解法演進】TODO: 說明從暴力解到最佳解的演進
+        // 【最佳解核心思路】TODO: 說明最佳解的關鍵想法
+        // 【複雜度】時間：O(?)  空間：O(?)
+
+        import Foundation
+
+        class Solution {{
+            func solve() {{
+                // TODO: 在此填入最佳解
+            }}
+        }}
+
+        // MARK: - Tests
+        let s = Solution()
+
+        // Test 1
+        // let result = s.solve(...)
+        // assert(result == expected, "Test 1 failed: \\(result)")
+
+        print("All tests passed!")
+    ''')
+
+
 # ─────────────────────────────────────────────
 # 根 README 生成
 # ─────────────────────────────────────────────
@@ -434,10 +520,13 @@ def main() -> None:
         os.makedirs(folder, exist_ok=True)
 
         files = {
-            "README.md":     make_readme(num, title, difficulty, url),
-            "solution.py":   make_python(num, title, difficulty, url),
-            "solution.dart": make_dart(num, title, difficulty, url),
-            "solution.swift": make_swift(num, title, difficulty, url),
+            "README.md":            make_readme(num, title, difficulty, url),
+            "solution.py":          make_python(num, title, difficulty, url),
+            "solution.dart":        make_dart(num, title, difficulty, url),
+            "solution.swift":       make_swift(num, title, difficulty, url),
+            "solution_optimal.py":  make_python_optimal(num, title, difficulty, url),
+            "solution_optimal.dart":  make_dart_optimal(num, title, difficulty, url),
+            "solution_optimal.swift": make_swift_optimal(num, title, difficulty, url),
         }
 
         for filename, content in files.items():

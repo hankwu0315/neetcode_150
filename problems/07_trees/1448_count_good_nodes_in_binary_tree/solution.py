@@ -5,16 +5,18 @@ URL: https://leetcode.com/problems/count-good-nodes-in-binary-tree/
 
 解法：DFS 攜帶路徑最大值，O(n)/O(h)。
 """
-from __future__ import annotations
-from typing import Optional, List
-from collections import deque
-import math
 
+from __future__ import annotations
+
+from typing import Optional, List
+
+from collections import deque
+
+import math
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val; self.left = left; self.right = right
-
 
 def from_level(arr: List[Optional[int]]) -> Optional[TreeNode]:
     if not arr: return None
@@ -27,21 +29,16 @@ def from_level(arr: List[Optional[int]]) -> Optional[TreeNode]:
         i += 1
     return root
 
-
 class Solution:
     def goodNodes(self, root: Optional[TreeNode]) -> int:
-        def dfs(n, mx):
-            if n is None: return 0
-            cnt = 1 if n.val >= mx else 0
-            nmx = mx if mx > n.val else n.val
-            return cnt + dfs(n.left, nmx) + dfs(n.right, nmx)
-        return dfs(root, -math.inf)
+        pass
 
 
 if __name__ == "__main__":
-    sol = Solution()
-    assert sol.goodNodes(from_level([3, 1, 4, 3, None, 1, 5])) == 4
-    assert sol.goodNodes(from_level([3, 3, None, 4, 2])) == 3
-    assert sol.goodNodes(from_level([1])) == 1
-    assert sol.goodNodes(from_level([2, None, 4, 10, 8, None, None, 4])) == 4
+    solution = Solution()
+
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
+
     print("All tests passed!")

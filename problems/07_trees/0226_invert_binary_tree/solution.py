@@ -5,15 +5,16 @@ URL: https://leetcode.com/problems/invert-binary-tree/
 
 解法：DFS 遞迴交換左右子樹，O(n)/O(h)。
 """
-from __future__ import annotations
-from typing import Optional, List
-from collections import deque
 
+from __future__ import annotations
+
+from typing import Optional, List
+
+from collections import deque
 
 class TreeNode:
     def __init__(self, val: int = 0, left: Optional["TreeNode"] = None, right: Optional["TreeNode"] = None):
         self.val = val; self.left = left; self.right = right
-
 
 def from_level(arr: List[Optional[int]]) -> Optional[TreeNode]:
     if not arr:
@@ -31,7 +32,6 @@ def from_level(arr: List[Optional[int]]) -> Optional[TreeNode]:
         i += 1
     return root
 
-
 def to_level(root: Optional[TreeNode]) -> List[Optional[int]]:
     if not root:
         return []
@@ -47,19 +47,16 @@ def to_level(root: Optional[TreeNode]) -> List[Optional[int]]:
         out.pop()
     return out
 
-
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        if root is None:
-            return None
-        root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
-        return root
+        pass
 
 
 if __name__ == "__main__":
-    sol = Solution()
-    assert to_level(sol.invertTree(from_level([4, 2, 7, 1, 3, 6, 9]))) == [4, 7, 2, 9, 6, 3, 1]
-    assert to_level(sol.invertTree(from_level([2, 1, 3]))) == [2, 3, 1]
-    assert to_level(sol.invertTree(from_level([]))) == []
-    assert to_level(sol.invertTree(from_level([1]))) == [1]
+    solution = Solution()
+
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
+
     print("All tests passed!")

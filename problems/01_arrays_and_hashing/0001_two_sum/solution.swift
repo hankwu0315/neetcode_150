@@ -11,22 +11,13 @@ import Foundation
 class Solution {
     // 最佳解：一遍 HashMap
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-        var seen = [Int: Int]()
-        for (i, x) in nums.enumerated() {
-            let comp = target - x
-            if let j = seen[comp] { return [j, i] }
-            seen[x] = i
-        }
+        // TODO: implement
         return []
     }
 
     // 暴力解
     func twoSum_brute(_ nums: [Int], _ target: Int) -> [Int] {
-        for i in 0..<nums.count {
-            for j in (i + 1)..<nums.count {
-                if nums[i] + nums[j] == target { return [i, j] }
-            }
-        }
+        // TODO: implement
         return []
     }
 }
@@ -36,12 +27,10 @@ func checkPair(_ actual: [Int], _ expected: [Int], _ name: String) {
     else { print("✗ \(name): expected \(expected.sorted()) but got \(actual.sorted())") }
 }
 
-let s = Solution()
-checkPair(s.twoSum([2, 7, 11, 15], 9), [0, 1], "Test 1")
-checkPair(s.twoSum([3, 2, 4], 6), [1, 2], "Test 2")
-checkPair(s.twoSum([3, 3], 6), [0, 1], "Test 3: same value")
-checkPair(s.twoSum([-1, -2, -3, -4, -5], -8), [2, 4], "Test 4: negatives")
-checkPair(s.twoSum([0, 4, 3, 0], 0), [0, 3], "Test 5: zeros")
-checkPair(s.twoSum_brute([2, 7, 11, 15], 9), [0, 1], "Brute Test 1")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
 
 print("All tests passed!")

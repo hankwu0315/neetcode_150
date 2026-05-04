@@ -22,22 +22,13 @@ func fromLevel(_ a: [Int?]) -> TreeNode? {
 }
 
 func find(_ root: TreeNode?, _ v: Int) -> TreeNode? {
-    var cur = root
-    while let c = cur {
-        if c.val == v { return c }
-        cur = v < c.val ? c.left : c.right
-    }
+    // TODO: implement
     return nil
 }
 
 class Solution {
     func lowestCommonAncestor(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
-        var n = root
-        while let cur = n {
-            if p!.val < cur.val && q!.val < cur.val { n = cur.left }
-            else if p!.val > cur.val && q!.val > cur.val { n = cur.right }
-            else { return cur }
-        }
+        // TODO: implement
         return nil
     }
 }
@@ -46,12 +37,10 @@ func checkInt(_ a: Int, _ e: Int, _ msg: String) {
     if a != e { fatalError("FAIL \(msg): \(a) vs \(e)") }
 }
 
-let sol = Solution()
-let r = fromLevel([6, 2, 8, 0, 4, 7, 9, nil, nil, 3, 5])!
-checkInt(sol.lowestCommonAncestor(r, find(r, 2), find(r, 8))!.val, 6, "2,8")
-checkInt(sol.lowestCommonAncestor(r, find(r, 2), find(r, 4))!.val, 2, "2,4")
-checkInt(sol.lowestCommonAncestor(r, find(r, 3), find(r, 5))!.val, 4, "3,5")
-checkInt(sol.lowestCommonAncestor(r, find(r, 0), find(r, 9))!.val, 6, "0,9")
-let r2 = fromLevel([2, 1])!
-checkInt(sol.lowestCommonAncestor(r2, find(r2, 2), find(r2, 1))!.val, 2, "parent")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
+
 print("All tests passed!")

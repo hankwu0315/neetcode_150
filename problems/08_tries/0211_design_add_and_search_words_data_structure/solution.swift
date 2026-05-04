@@ -10,28 +10,15 @@ final class WDNode {
 
 class WordDictionary {
     private let root = WDNode()
-    init() {}
+    init() {
+        // TODO: implement
+    }
     func addWord(_ word: String) {
-        var n = root
-        for c in word {
-            if let nx = n.ch[c] { n = nx }
-            else { let x = WDNode(); n.ch[c] = x; n = x }
-        }
-        n.end = true
+        // TODO: implement
     }
     func search(_ word: String) -> Bool {
-        let arr = Array(word)
-        func dfs(_ i: Int, _ n: WDNode) -> Bool {
-            if i == arr.count { return n.end }
-            let c = arr[i]
-            if c == "." {
-                for nx in n.ch.values { if dfs(i + 1, nx) { return true } }
-                return false
-            }
-            guard let nx = n.ch[c] else { return false }
-            return dfs(i + 1, nx)
-        }
-        return dfs(0, root)
+        // TODO: implement
+        return false
     }
 }
 
@@ -39,15 +26,10 @@ func checkBool(_ a: Bool, _ e: Bool, _ msg: String) {
     if a != e { fatalError("FAIL \(msg)") }
 }
 
-let w = WordDictionary()
-w.addWord("bad"); w.addWord("dad"); w.addWord("mad")
-checkBool(w.search("pad"), false, "pad")
-checkBool(w.search("bad"), true, "bad")
-checkBool(w.search(".ad"), true, ".ad")
-checkBool(w.search("b.."), true, "b..")
-checkBool(w.search("b..."), false, "b...")
-w.addWord("a")
-checkBool(w.search("a"), true, "a")
-checkBool(w.search("."), true, ".")
-checkBool(w.search("aa"), false, "aa")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
+
 print("All tests passed!")

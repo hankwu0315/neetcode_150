@@ -23,29 +23,20 @@ func fromLevel(_ a: [Int?]) -> TreeNode? {
 
 class Solution {
     func levelOrder(_ root: TreeNode?) -> [[Int]] {
-        guard let root = root else { return [] }
-        var out: [[Int]] = []
-        var q: [TreeNode] = [root]
-        while !q.isEmpty {
-            var layer: [Int] = []
-            var nx: [TreeNode] = []
-            for n in q {
-                layer.append(n.val)
-                if let l = n.left { nx.append(l) }
-                if let r = n.right { nx.append(r) }
-            }
-            out.append(layer)
-            q = nx
-        }
-        return out
+        // TODO: implement
+        return []
     }
 }
 
-func eq(_ a: [[Int]], _ b: [[Int]]) -> Bool { a.count == b.count && zip(a, b).allSatisfy { $0 == $1 } }
+func eq(_ a: [[Int]], _ b: [[Int]]) -> Bool {
+    // TODO: implement
+    return false
+}
 
-let sol = Solution()
-if !eq(sol.levelOrder(fromLevel([3, 9, 20, nil, nil, 15, 7])), [[3], [9, 20], [15, 7]]) { fatalError("ex1") }
-if !eq(sol.levelOrder(fromLevel([1])), [[1]]) { fatalError("one") }
-if !eq(sol.levelOrder(fromLevel([])), []) { fatalError("empty") }
-if !eq(sol.levelOrder(fromLevel([1, 2, 3, 4, 5, 6, 7])), [[1], [2, 3], [4, 5, 6, 7]]) { fatalError("full") }
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
+
 print("All tests passed!")

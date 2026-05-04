@@ -21,23 +21,13 @@ TreeNode? fromLevel(List<int?> a) {
 }
 
 int goodNodes(TreeNode? root) {
-  int dfs(TreeNode? n, int mx) {
-    if (n == null) return 0;
-    var cnt = n.val >= mx ? 1 : 0;
-    final nmx = mx > n.val ? mx : n.val;
-    return cnt + dfs(n.left, nmx) + dfs(n.right, nmx);
-  }
-  return dfs(root, -1 << 31);
+  // TODO: implement
+  return 0;
 }
 
-void _expect(int a, int e, String msg) {
-  if (a != e) throw StateError('FAIL $msg: $a vs $e');
-}
 
 void main() {
-  _expect(goodNodes(fromLevel([3, 1, 4, 3, null, 1, 5])), 4, 'ex1');
-  _expect(goodNodes(fromLevel([3, 3, null, 4, 2])), 3, 'ex2');
-  _expect(goodNodes(fromLevel([1])), 1, 'one');
-  _expect(goodNodes(fromLevel([2, null, 4, 10, 8, null, null, 4])), 4, 'ex4');
+  // Test 1
+  // final result = solve(...);
   print('All tests passed!');
 }

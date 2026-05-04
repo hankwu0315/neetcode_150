@@ -8,52 +8,19 @@
 
 class Codec {
   String encode(List<String> strs) {
-    final buf = StringBuffer();
-    for (final s in strs) {
-      buf.write(s.length);
-      buf.write('#');
-      buf.write(s);
-    }
-    return buf.toString();
+    // TODO: implement
+    return "";
   }
 
   List<String> decode(String s) {
-    final result = <String>[];
-    int i = 0;
-    while (i < s.length) {
-      final j = s.indexOf('#', i);
-      final length = int.parse(s.substring(i, j));
-      result.add(s.substring(j + 1, j + 1 + length));
-      i = j + 1 + length;
-    }
-    return result;
+    // TODO: implement
+    return [];
   }
 }
 
-void _expect(List<String> actual, List<String> expected, String name) {
-  if (actual.toString() == expected.toString()) {
-    print('✓ $name');
-  } else {
-    print('✗ $name: expected $expected but got $actual');
-  }
-}
 
 void main() {
-  final codec = Codec();
-  final cases = <List<String>>[
-    ['lint', 'code', 'love', 'you'],
-    ['we', 'say', ':', 'yes'],
-    [''],
-    [],
-    ['', ''],
-    ['#', '1#', 'abc#def', '##'],
-    ['a' * 100, 'b' * 50],
-  ];
-  for (int i = 0; i < cases.length; i++) {
-    final c = cases[i];
-    final decoded = codec.decode(codec.encode(c));
-    _expect(decoded, c, 'Test ${i + 1}');
-  }
-
+  // Test 1
+  // final result = solve(...);
   print('All tests passed!');
 }

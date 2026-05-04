@@ -21,31 +21,13 @@ TreeNode? fromLevel(List<int?> a) {
 }
 
 int maxPathSum(TreeNode? root) {
-  var ans = -1 << 31;
-  int gain(TreeNode? n) {
-    if (n == null) return 0;
-    final L = gain(n.left);
-    final R = gain(n.right);
-    final l = L > 0 ? L : 0;
-    final r = R > 0 ? R : 0;
-    final cur = n.val + l + r;
-    if (cur > ans) ans = cur;
-    return n.val + (l > r ? l : r);
-  }
-  gain(root);
-  return ans;
+  // TODO: implement
+  return 0;
 }
 
-void _expect(int a, int e, String msg) {
-  if (a != e) throw StateError('FAIL $msg: $a vs $e');
-}
 
 void main() {
-  _expect(maxPathSum(fromLevel([1, 2, 3])), 6, 'ex1');
-  _expect(maxPathSum(fromLevel([-10, 9, 20, null, null, 15, 7])), 42, 'ex2');
-  _expect(maxPathSum(fromLevel([-3])), -3, 'one neg');
-  _expect(maxPathSum(fromLevel([2, -1])), 2, 'pos+neg');
-  _expect(maxPathSum(fromLevel([-2, -1])), -1, 'all neg');
-  _expect(maxPathSum(fromLevel([1, -2, -3, 1, 3, -2, null, -1])), 3, 'mixed');
+  // Test 1
+  // final result = solve(...);
   print('All tests passed!');
 }

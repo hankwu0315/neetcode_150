@@ -13,31 +13,19 @@ URL: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 複雜度：O(log n) / O(1)。
 """
 
-
 class Solution:
     def findMin(self, nums: list[int]) -> int:
-        l, r = 0, len(nums) - 1
-        while l < r:
-            mid = l + (r - l) // 2
-            if nums[mid] > nums[r]:
-                l = mid + 1
-            else:
-                r = mid
-        return nums[l]
+        pass
 
     def findMin_brute(self, nums: list[int]) -> int:
-        return min(nums)
+        pass
 
 
 if __name__ == "__main__":
-    sol = Solution()
-    for fn in (sol.findMin, sol.findMin_brute):
-        assert fn([3, 4, 5, 1, 2]) == 1
-        assert fn([4, 5, 6, 7, 0, 1, 2]) == 0
-        assert fn([11, 13, 15, 17]) == 11  # 未旋轉
-        assert fn([2, 1]) == 1
-        assert fn([1]) == 1
-        assert fn([1, 2]) == 1
-        # 旋轉到剩 1 個在右
-        assert fn([2, 3, 4, 5, 1]) == 1
+    solution = Solution()
+
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
+
     print("All tests passed!")

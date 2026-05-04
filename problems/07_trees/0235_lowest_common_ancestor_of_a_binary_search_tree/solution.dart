@@ -21,35 +21,18 @@ TreeNode? fromLevel(List<int?> a) {
 }
 
 TreeNode? find(TreeNode? root, int v) {
-  TreeNode? cur = root;
-  while (cur != null) {
-    if (cur.val == v) return cur;
-    cur = v < cur.val ? cur.left : cur.right;
-  }
+  // TODO: implement
   return null;
 }
 
 TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-  TreeNode? n = root;
-  while (n != null) {
-    if (p.val < n.val && q.val < n.val) n = n.left;
-    else if (p.val > n.val && q.val > n.val) n = n.right;
-    else return n;
-  }
-  throw StateError('not found');
+  // TODO: implement
+  throw UnimplementedError();
 }
 
-void _expect(int a, int e, String msg) {
-  if (a != e) throw StateError('FAIL $msg: $a vs $e');
-}
 
 void main() {
-  final r = fromLevel([6, 2, 8, 0, 4, 7, 9, null, null, 3, 5])!;
-  _expect(lowestCommonAncestor(r, find(r, 2)!, find(r, 8)!).val, 6, '2,8');
-  _expect(lowestCommonAncestor(r, find(r, 2)!, find(r, 4)!).val, 2, '2,4');
-  _expect(lowestCommonAncestor(r, find(r, 3)!, find(r, 5)!).val, 4, '3,5');
-  _expect(lowestCommonAncestor(r, find(r, 0)!, find(r, 9)!).val, 6, '0,9');
-  final r2 = fromLevel([2, 1])!;
-  _expect(lowestCommonAncestor(r2, find(r2, 2)!, find(r2, 1)!).val, 2, 'parent');
+  // Test 1
+  // final result = solve(...);
   print('All tests passed!');
 }

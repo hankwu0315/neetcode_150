@@ -21,25 +21,13 @@ TreeNode? fromLevel(List<int?> a) {
 }
 
 bool isValidBST(TreeNode? root) {
-  bool valid(TreeNode? n, int lo, int hi) {
-    if (n == null) return true;
-    if (!(n.val > lo && n.val < hi)) return false;
-    return valid(n.left, lo, n.val) && valid(n.right, n.val, hi);
-  }
-  // 用 int 邊界足夠（題目值 32-bit），這裡用 64-bit 範圍
-  return valid(root, -9223372036854775807, 9223372036854775807);
+  // TODO: implement
+  return false;
 }
 
-void _expect(bool a, bool e, String msg) {
-  if (a != e) throw StateError('FAIL $msg');
-}
 
 void main() {
-  _expect(isValidBST(fromLevel([2, 1, 3])), true, 'ex1');
-  _expect(isValidBST(fromLevel([5, 1, 4, null, null, 3, 6])), false, 'ex2');
-  _expect(isValidBST(fromLevel([])), true, 'empty');
-  _expect(isValidBST(fromLevel([1])), true, 'one');
-  _expect(isValidBST(fromLevel([5, 4, 6, null, null, 3, 7])), false, 'right has 3');
-  _expect(isValidBST(fromLevel([10, 5, 15, null, null, 6, 20])), false, 'ancestor');
+  // Test 1
+  // final result = solve(...);
   print('All tests passed!');
 }

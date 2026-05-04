@@ -21,32 +21,13 @@ TreeNode? fromLevel(List<int?> a) {
 }
 
 List<int> rightSideView(TreeNode? root) {
-  if (root == null) return [];
-  final out = <int>[];
-  var q = <TreeNode>[root];
-  while (q.isNotEmpty) {
-    final nx = <TreeNode>[];
-    for (final n in q) {
-      if (n.left != null) nx.add(n.left!);
-      if (n.right != null) nx.add(n.right!);
-    }
-    out.add(q.last.val);
-    q = nx;
-  }
-  return out;
+  // TODO: implement
+  return [];
 }
 
-void _expect(List<int> a, List<int> e, String msg) {
-  if (a.length != e.length || !List.generate(a.length, (i) => a[i] == e[i]).every((x) => x)) {
-    throw StateError('FAIL $msg: $a vs $e');
-  }
-}
 
 void main() {
-  _expect(rightSideView(fromLevel([1, 2, 3, null, 5, null, 4])), [1, 3, 4], 'ex1');
-  _expect(rightSideView(fromLevel([1, null, 3])), [1, 3], 'ex2');
-  _expect(rightSideView(fromLevel([])), [], 'empty');
-  _expect(rightSideView(fromLevel([1, 2])), [1, 2], 'left only');
-  _expect(rightSideView(fromLevel([1, 2, 3, 4])), [1, 3, 4], 'mixed');
+  // Test 1
+  // final result = solve(...);
   print('All tests passed!');
 }

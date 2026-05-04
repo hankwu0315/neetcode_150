@@ -2,22 +2,16 @@
 Problem: 0062. Unique Paths
 """
 
-
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
-        dp = [1] * n
-        for _ in range(1, m):
-            for j in range(1, n):
-                dp[j] += dp[j - 1]
-        return dp[-1]
+        pass
 
 
 if __name__ == "__main__":
-    sol = Solution()
-    assert sol.uniquePaths(3, 7) == 28
-    assert sol.uniquePaths(3, 2) == 3
-    assert sol.uniquePaths(7, 3) == 28
-    assert sol.uniquePaths(1, 1) == 1
-    assert sol.uniquePaths(1, 10) == 1
-    assert sol.uniquePaths(10, 10) == 48620
+    solution = Solution()
+
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
+
     print("All tests passed!")

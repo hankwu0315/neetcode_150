@@ -13,39 +13,20 @@ URL: https://leetcode.com/problems/valid-parentheses/
 複雜度：時間 O(n)，空間 O(n)。
 """
 
-
 class Solution:
     # 最佳解：堆疊 O(n) / O(n)
     def isValid(self, s: str) -> bool:
-        pairs = {")": "(", "]": "[", "}": "{"}
-        stack: list[str] = []
-        for ch in s:
-            if ch in pairs:
-                if not stack or stack[-1] != pairs[ch]:
-                    return False
-                stack.pop()
-            else:
-                stack.append(ch)
-        return not stack
+        pass
 
-    # 暴力：反覆 replace O(n^2) / O(n)
     def isValid_brute(self, s: str) -> bool:
-        prev = None
-        while prev != s:
-            prev = s
-            s = s.replace("()", "").replace("[]", "").replace("{}", "")
-        return s == ""
+        pass
 
 
 if __name__ == "__main__":
-    sol = Solution()
-    for fn in (sol.isValid, sol.isValid_brute):
-        assert fn("()") is True
-        assert fn("()[]{}") is True
-        assert fn("(]") is False
-        assert fn("([)]") is False
-        assert fn("{[]}") is True
-        assert fn("") is True
-        assert fn("(") is False
-        assert fn("]") is False
+    solution = Solution()
+
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
+
     print("All tests passed!")

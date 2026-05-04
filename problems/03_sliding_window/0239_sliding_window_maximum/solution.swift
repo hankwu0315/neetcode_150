@@ -10,16 +10,8 @@ import Foundation
 
 class Solution {
     func maxSlidingWindow(_ nums: [Int], _ k: Int) -> [Int] {
-        var dq = [Int]()  // 用 array 模擬 deque：head 指標
-        var head = 0
-        var ans = [Int]()
-        for r in 0..<nums.count {
-            while head < dq.count && nums[dq.last!] <= nums[r] { dq.removeLast() }
-            dq.append(r)
-            if dq[head] < r - k + 1 { head += 1 }
-            if r >= k - 1 { ans.append(nums[dq[head]]) }
-        }
-        return ans
+        // TODO: implement
+        return []
     }
 }
 
@@ -28,12 +20,10 @@ func checkArr(_ actual: [Int], _ expected: [Int], _ name: String) {
     else { print("✗ \(name): expected \(expected) but got \(actual)") }
 }
 
-let s = Solution()
-checkArr(s.maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3), [3, 3, 5, 5, 6, 7], "Test 1")
-checkArr(s.maxSlidingWindow([1], 1), [1], "Test 2")
-checkArr(s.maxSlidingWindow([1, -1], 1), [1, -1], "Test 3")
-checkArr(s.maxSlidingWindow([9, 11], 2), [11], "Test 4")
-checkArr(s.maxSlidingWindow([4, -2], 2), [4], "Test 5")
-checkArr(s.maxSlidingWindow([7, 2, 4], 2), [7, 4], "Test 6")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
 
 print("All tests passed!")

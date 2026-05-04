@@ -23,19 +23,8 @@ func fromLevel(_ a: [Int?]) -> TreeNode? {
 
 class Solution {
     func rightSideView(_ root: TreeNode?) -> [Int] {
-        guard let root = root else { return [] }
-        var out: [Int] = []
-        var q: [TreeNode] = [root]
-        while !q.isEmpty {
-            var nx: [TreeNode] = []
-            for n in q {
-                if let l = n.left { nx.append(l) }
-                if let r = n.right { nx.append(r) }
-            }
-            out.append(q.last!.val)
-            q = nx
-        }
-        return out
+        // TODO: implement
+        return []
     }
 }
 
@@ -43,10 +32,10 @@ func checkArr(_ a: [Int], _ e: [Int], _ msg: String) {
     if a != e { fatalError("FAIL \(msg): \(a) vs \(e)") }
 }
 
-let sol = Solution()
-checkArr(sol.rightSideView(fromLevel([1, 2, 3, nil, 5, nil, 4])), [1, 3, 4], "ex1")
-checkArr(sol.rightSideView(fromLevel([1, nil, 3])), [1, 3], "ex2")
-checkArr(sol.rightSideView(fromLevel([])), [], "empty")
-checkArr(sol.rightSideView(fromLevel([1, 2])), [1, 2], "left only")
-checkArr(sol.rightSideView(fromLevel([1, 2, 3, 4])), [1, 3, 4], "mixed")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
+
 print("All tests passed!")

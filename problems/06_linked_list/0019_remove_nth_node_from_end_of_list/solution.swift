@@ -22,12 +22,8 @@ func toArr(_ h: ListNode?) -> [Int] {
 
 class Solution {
     func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
-        let dummy = ListNode(0, head)
-        var fast: ListNode? = dummy, slow: ListNode? = dummy
-        for _ in 0..<(n + 1) { fast = fast!.next }
-        while fast != nil { fast = fast!.next; slow = slow!.next }
-        slow!.next = slow!.next!.next
-        return dummy.next
+        // TODO: implement
+        return nil
     }
 }
 
@@ -35,11 +31,10 @@ func checkArr(_ a: [Int], _ e: [Int], _ msg: String) {
     if a != e { fatalError("FAIL \(msg)") }
 }
 
-let sol = Solution()
-checkArr(toArr(sol.removeNthFromEnd(fromArr([1, 2, 3, 4, 5]), 2)), [1, 2, 3, 5], "ex1")
-checkArr(toArr(sol.removeNthFromEnd(fromArr([1]), 1)), [], "one")
-checkArr(toArr(sol.removeNthFromEnd(fromArr([1, 2]), 1)), [1], "tail")
-checkArr(toArr(sol.removeNthFromEnd(fromArr([1, 2]), 2)), [2], "head")
-checkArr(toArr(sol.removeNthFromEnd(fromArr([1, 2, 3, 4, 5]), 5)), [2, 3, 4, 5], "head5")
-checkArr(toArr(sol.removeNthFromEnd(fromArr([1, 2, 3, 4, 5]), 1)), [1, 2, 3, 4], "tail5")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
+
 print("All tests passed!")

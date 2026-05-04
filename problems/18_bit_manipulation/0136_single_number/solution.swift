@@ -1,15 +1,18 @@
 // 0136. Single Number
+
 import Foundation
+
 class Solution {
     func singleNumber(_ nums: [Int]) -> Int {
-        var x = 0
-        for v in nums { x ^= v }
-        return x
+        // TODO: implement
+        return 0
     }
 }
-let sol = Solution()
-if sol.singleNumber([2, 2, 1]) != 1 { fatalError("a") }
-if sol.singleNumber([4, 1, 2, 1, 2]) != 4 { fatalError("b") }
-if sol.singleNumber([1]) != 1 { fatalError("c") }
-if sol.singleNumber([7, 3, 5, 4, 5, 3, 4]) != 7 { fatalError("d") }
+
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
+
 print("All tests passed!")

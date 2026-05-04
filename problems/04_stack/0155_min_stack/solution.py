@@ -13,66 +13,45 @@ URL: https://leetcode.com/problems/min-stack/
 複雜度：每個操作 O(1)，空間 O(n)。
 """
 
-
 class MinStack:
     def __init__(self) -> None:
-        self.stack: list[int] = []
-        self.min_stack: list[int] = []
+        pass
 
     def push(self, val: int) -> None:
-        self.stack.append(val)
-        if not self.min_stack or val <= self.min_stack[-1]:
-            self.min_stack.append(val)
+        pass
 
     def pop(self) -> None:
-        v = self.stack.pop()
-        if v == self.min_stack[-1]:
-            self.min_stack.pop()
+        pass
 
     def top(self) -> int:
-        return self.stack[-1]
+        pass
 
     def getMin(self) -> int:
-        return self.min_stack[-1]
+        pass
 
 
-# 解法 2：每個元素存 (val, min)
 class MinStackPaired:
     def __init__(self) -> None:
-        self.s: list[tuple[int, int]] = []
+        pass
 
     def push(self, val: int) -> None:
-        m = val if not self.s else min(val, self.s[-1][1])
-        self.s.append((val, m))
+        pass
 
     def pop(self) -> None:
-        self.s.pop()
+        pass
 
     def top(self) -> int:
-        return self.s[-1][0]
+        pass
 
     def getMin(self) -> int:
-        return self.s[-1][1]
+        pass
 
 
 if __name__ == "__main__":
-    for cls in (MinStack, MinStackPaired):
-        ms = cls()
-        ms.push(-2); ms.push(0); ms.push(-3)
-        assert ms.getMin() == -3
-        ms.pop()
-        assert ms.top() == 0
-        assert ms.getMin() == -2
+    minStack = MinStack()
 
-        # 重複最小值
-        ms = cls()
-        ms.push(1); ms.push(1); ms.push(1)
-        assert ms.getMin() == 1
-        ms.pop(); assert ms.getMin() == 1
-        ms.pop(); assert ms.getMin() == 1
+    # Test 1
+    # result = minStack.solve(...)
+    # assert result == expected
 
-        # 單一元素
-        ms = cls()
-        ms.push(5)
-        assert ms.top() == 5 and ms.getMin() == 5
     print("All tests passed!")

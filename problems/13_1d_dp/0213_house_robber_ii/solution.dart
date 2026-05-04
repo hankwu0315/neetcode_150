@@ -1,5 +1,7 @@
 // 0213. House Robber II
+
 import 'dart:math';
+
 int _linear(List<int> a, int lo, int hi) {
   var p2 = 0, p1 = 0;
   for (var i = lo; i < hi; i++) {
@@ -8,17 +10,14 @@ int _linear(List<int> a, int lo, int hi) {
   }
   return p1;
 }
+
 int rob(List<int> nums) {
-  if (nums.isEmpty) return 0;
-  if (nums.length == 1) return nums[0];
-  return max(_linear(nums, 1, nums.length), _linear(nums, 0, nums.length - 1));
+  // TODO: implement
+  return 0;
 }
+
 void main() {
-  if (rob([2, 3, 2]) != 3) throw 'a';
-  if (rob([1, 2, 3, 1]) != 4) throw 'b';
-  if (rob([1, 2, 3]) != 3) throw 'c';
-  if (rob([]) != 0) throw 'd';
-  if (rob([5]) != 5) throw 'e';
-  if (rob([1, 2]) != 2) throw 'f';
+  // Test 1
+  // final result = solve(...);
   print('All tests passed!');
 }

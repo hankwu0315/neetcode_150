@@ -9,40 +9,20 @@ URL: https://leetcode.com/problems/valid-palindrome/
 【複雜度】時間：O(n)  空間：O(1)
 """
 
-
 class Solution:
     # 最佳解：雙指標
     def isPalindrome(self, s: str) -> bool:
-        l, r = 0, len(s) - 1
-        while l < r:
-            while l < r and not s[l].isalnum():
-                l += 1
-            while l < r and not s[r].isalnum():
-                r -= 1
-            if s[l].lower() != s[r].lower():
-                return False
-            l += 1
-            r -= 1
-        return True
+        pass
 
-    # 暴力解：清理 + 反轉
     def isPalindrome_brute(self, s: str) -> bool:
-        t = "".join(c.lower() for c in s if c.isalnum())
-        return t == t[::-1]
+        pass
 
 
 if __name__ == "__main__":
-    s = Solution()
+    solution = Solution()
 
-    assert s.isPalindrome("A man, a plan, a canal: Panama") is True, "Test 1 failed"
-    assert s.isPalindrome("race a car") is False, "Test 2 failed"
-    assert s.isPalindrome(" ") is True, "Test 3 failed (empty after clean)"
-    assert s.isPalindrome("") is True, "Test 4 failed (empty)"
-    assert s.isPalindrome("0P") is False, "Test 5 failed (digit vs letter)"
-    assert s.isPalindrome("a.") is True, "Test 6 failed (single alnum)"
-    assert s.isPalindrome("ab") is False, "Test 7 failed"
-
-    assert s.isPalindrome_brute("A man, a plan, a canal: Panama") is True
-    assert s.isPalindrome_brute("race a car") is False
+    # Test 1
+    # result = solution.solve(...)
+    # assert result == expected
 
     print("All tests passed!")

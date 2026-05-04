@@ -10,21 +10,13 @@ import Foundation
 
 class Solution {
     func isPalindrome(_ s: String) -> Bool {
-        let chars = Array(s)
-        var l = 0, r = chars.count - 1
-        while l < r {
-            while l < r && !chars[l].isLetter && !chars[l].isNumber { l += 1 }
-            while l < r && !chars[r].isLetter && !chars[r].isNumber { r -= 1 }
-            if chars[l].lowercased() != chars[r].lowercased() { return false }
-            l += 1
-            r -= 1
-        }
-        return true
+        // TODO: implement
+        return false
     }
 
     func isPalindrome_brute(_ s: String) -> Bool {
-        let t = s.lowercased().filter { $0.isLetter || $0.isNumber }
-        return t == String(t.reversed())
+        // TODO: implement
+        return false
     }
 }
 
@@ -33,14 +25,10 @@ func checkBool(_ actual: Bool, _ expected: Bool, _ name: String) {
     else { print("✗ \(name): expected \(expected) but got \(actual)") }
 }
 
-let s = Solution()
-checkBool(s.isPalindrome("A man, a plan, a canal: Panama"), true, "Test 1")
-checkBool(s.isPalindrome("race a car"), false, "Test 2")
-checkBool(s.isPalindrome(" "), true, "Test 3: empty after clean")
-checkBool(s.isPalindrome(""), true, "Test 4: empty")
-checkBool(s.isPalindrome("0P"), false, "Test 5: digit vs letter")
-checkBool(s.isPalindrome("a."), true, "Test 6: single alnum")
-checkBool(s.isPalindrome("ab"), false, "Test 7")
-checkBool(s.isPalindrome_brute("A man, a plan, a canal: Panama"), true, "Brute Test")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
 
 print("All tests passed!")

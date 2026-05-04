@@ -17,44 +17,18 @@ int _toLower(int c) {
 }
 
 bool isPalindrome(String s) {
-  int l = 0, r = s.length - 1;
-  while (l < r) {
-    while (l < r && !_isAlnum(s.codeUnitAt(l))) l++;
-    while (l < r && !_isAlnum(s.codeUnitAt(r))) r--;
-    if (_toLower(s.codeUnitAt(l)) != _toLower(s.codeUnitAt(r))) return false;
-    l++;
-    r--;
-  }
-  return true;
+  // TODO: implement
+  return false;
 }
 
 bool isPalindromeBrute(String s) {
-  final buf = StringBuffer();
-  for (int i = 0; i < s.length; i++) {
-    final c = s.codeUnitAt(i);
-    if (_isAlnum(c)) buf.writeCharCode(_toLower(c));
-  }
-  final t = buf.toString();
-  return t == t.split('').reversed.join();
+  // TODO: implement
+  return false;
 }
 
-void _expect(bool actual, bool expected, String name) {
-  if (actual == expected) {
-    print('✓ $name');
-  } else {
-    print('✗ $name: expected $expected but got $actual');
-  }
-}
 
 void main() {
-  _expect(isPalindrome('A man, a plan, a canal: Panama'), true, 'Test 1');
-  _expect(isPalindrome('race a car'), false, 'Test 2');
-  _expect(isPalindrome(' '), true, 'Test 3: empty after clean');
-  _expect(isPalindrome(''), true, 'Test 4: empty');
-  _expect(isPalindrome('0P'), false, 'Test 5: digit vs letter');
-  _expect(isPalindrome('a.'), true, 'Test 6: single alnum');
-  _expect(isPalindrome('ab'), false, 'Test 7');
-  _expect(isPalindromeBrute('A man, a plan, a canal: Panama'), true, 'Brute Test');
-
+  // Test 1
+  // final result = solve(...);
   print('All tests passed!');
 }

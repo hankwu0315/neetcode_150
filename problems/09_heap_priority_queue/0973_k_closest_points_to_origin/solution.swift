@@ -11,50 +11,25 @@ struct PQ {
     var a: [PQEntry] = []
     var count: Int { a.count }
     mutating func push(_ e: PQEntry) {
-        a.append(e)
-        var i = a.count - 1
-        while i > 0 {
-            let p = (i - 1) >> 1
-            if a[p].d >= a[i].d { break }
-            a.swapAt(p, i); i = p
-        }
+        // TODO: implement
     }
     @discardableResult
     mutating func pop() -> PQEntry {
-        let top = a[0]
-        let last = a.removeLast()
-        if !a.isEmpty {
-            a[0] = last
-            var i = 0; let n = a.count
-            while true {
-                let l = 2 * i + 1, r = 2 * i + 2
-                var m = i
-                if l < n && a[l].d > a[m].d { m = l }
-                if r < n && a[r].d > a[m].d { m = r }
-                if m == i { break }
-                a.swapAt(i, m); i = m
-            }
-        }
-        return top
+        // TODO: implement
+        return nil
     }
 }
 
 class Solution {
     func kClosest(_ points: [[Int]], _ k: Int) -> [[Int]] {
-        var h = PQ()
-        for p in points {
-            let d = p[0] * p[0] + p[1] * p[1]
-            if h.count < k { h.push(PQEntry(d: d, x: p[0], y: p[1])) }
-            else if d < h.a[0].d {
-                _ = h.pop(); h.push(PQEntry(d: d, x: p[0], y: p[1]))
-            }
-        }
-        return h.a.map { [$0.x, $0.y] }
+        // TODO: implement
+        return []
     }
 }
 
 func norm(_ a: [[Int]]) -> [[Int]] {
-    a.sorted { ($0[0], $0[1]) < ($1[0], $1[1]) }
+    // TODO: implement
+    return []
 }
 
 func checkArr(_ a: [[Int]], _ e: [[Int]], _ msg: String) {
@@ -65,10 +40,10 @@ func checkArr(_ a: [[Int]], _ e: [[Int]], _ msg: String) {
     }
 }
 
-let sol = Solution()
-checkArr(sol.kClosest([[1, 3], [-2, 2]], 1), [[-2, 2]], "ex1")
-checkArr(sol.kClosest([[3, 3], [5, -1], [-2, 4]], 2), [[3, 3], [-2, 4]], "ex2")
-checkArr(sol.kClosest([[1, 1]], 1), [[1, 1]], "ex3")
-checkArr(sol.kClosest([[0, 1], [1, 0]], 2), [[0, 1], [1, 0]], "ex4")
-checkArr(sol.kClosest([[2, 2], [2, 2], [3, 3]], 2), [[2, 2], [2, 2]], "ex5")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
+
 print("All tests passed!")

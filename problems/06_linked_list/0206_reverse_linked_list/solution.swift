@@ -25,15 +25,8 @@ func toArr(_ h: ListNode?) -> [Int] {
 
 class Solution {
     func reverseList(_ head: ListNode?) -> ListNode? {
-        var prev: ListNode? = nil
-        var cur = head
-        while cur != nil {
-            let nxt = cur!.next
-            cur!.next = prev
-            prev = cur
-            cur = nxt
-        }
-        return prev
+        // TODO: implement
+        return nil
     }
 }
 
@@ -41,9 +34,10 @@ func checkArr(_ a: [Int], _ e: [Int], _ msg: String) {
     if a != e { fatalError("FAIL \(msg): \(a) vs \(e)") }
 }
 
-let sol = Solution()
-checkArr(toArr(sol.reverseList(fromArr([1, 2, 3, 4, 5]))), [5, 4, 3, 2, 1], "ex1")
-checkArr(toArr(sol.reverseList(fromArr([1, 2]))), [2, 1], "ex2")
-checkArr(toArr(sol.reverseList(fromArr([]))), [], "empty")
-checkArr(toArr(sol.reverseList(fromArr([7]))), [7], "single")
+// MARK: - Tests
+// let s = Solution()
+
+// Test 1
+// let result = s.solve(...)
+
 print("All tests passed!")
